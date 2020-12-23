@@ -497,6 +497,11 @@ class zdtm_test:
             # this use case.
             os.chmod(os.path.dirname(self.__flavor.root), 0o700)
 
+        self.__freezer.thaw()
+        os.kill(int(self.__pid), signal.SIGSTOP)
+        os.kill(int(self.__pid), signal.SIGCONT)
+        self.__freezer.freeze()
+
     def kill(self, sig=signal.SIGKILL):
         self.__freezer.thaw()
         if self.__pid:
