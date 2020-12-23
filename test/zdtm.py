@@ -489,10 +489,6 @@ class zdtm_test:
             # Wait less than a second to give the test chance to
             # move into some semi-random state
             time.sleep(random.random())
-        if self.__freezer:
-            self.__freezer.thaw()
-        if self.__freezer:
-            self.__freezer.freeze()
 
         if self.__flavor.ns:
             # In the case of runc the path specified with the opts.root
