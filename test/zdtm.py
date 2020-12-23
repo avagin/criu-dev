@@ -491,7 +491,6 @@ class zdtm_test:
             time.sleep(random.random())
         if self.__freezer:
             self.__freezer.thaw()
-        time.sleep(3)
         if self.__freezer:
             self.__freezer.freeze()
 
