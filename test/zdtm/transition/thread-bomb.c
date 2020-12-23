@@ -13,7 +13,7 @@
 
 static pthread_attr_t attr;
 /* Having in mind setup with 64 Kb large pages */
-static const size_t stack_size = 64 * 1024;
+static const size_t stack_size = 2 * 64 * 1024;
 
 static void *thread_fn(void *arg)
 {

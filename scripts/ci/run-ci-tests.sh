@@ -206,6 +206,16 @@ if [ "${STREAM_TEST}" = "1" ]; then
 	exit 0
 fi
 
+./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst --iter 0
+./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst --iter 0
+./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst --iter 0
+./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
+./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
+./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
+./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
+./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
+
+exit 0
 # shellcheck disable=SC2086
 ./test/zdtm.py run -a -p 2 --keep-going $ZDTM_OPTS
 
