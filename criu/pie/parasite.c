@@ -743,7 +743,6 @@ int parasite_trap_cmd(int cmd, void *args)
 {
 	switch (cmd) {
 	case PARASITE_CMD_DUMP_THREAD:
-		return 0;
 		return dump_thread(args);
 	}
 
