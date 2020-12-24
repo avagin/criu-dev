@@ -207,15 +207,8 @@ if [ "${STREAM_TEST}" = "1" ]; then
 fi
 
 for i in `seq 100`; do
-	./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst --iter 0
+	./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
 done
-./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst --iter 0
-./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst --iter 0
-./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
-./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
-./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
-./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
-./test/zdtm.py run -t zdtm/transition/thread-bomb -f h --keep-going --report report --freezecg zdtm:f --norst
 
 exit 0
 # shellcheck disable=SC2086

@@ -1864,6 +1864,9 @@ int cr_dump_tasks(pid_t pid)
 	if (collect_pstree())
 		goto err;
 
+	ret = 0;
+	goto err;
+
 	if (collect_pstree_ids())
 		goto err;
 
