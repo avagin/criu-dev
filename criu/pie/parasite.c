@@ -286,35 +286,8 @@ static int dump_creds(struct parasite_dump_creds *args)
 
 
 	args->uids[0] = args->uids[1] = args->uids[2] = args->uids[3] = 0;
-if (0) {
-	ret = sys_getresuid(&args->uids[0], &args->uids[1], &args->uids[2]);
-	if (ret) {
-		pr_err("Unable to get uids: %d\n", ret);
-		return -1;
-	}
-}
-
-	//args->uids[3] = sys_setfsuid(-1L);
-
-	/*
-	 * FIXME In https://github.com/checkpoint-restore/criu/issues/95 it is
-	 * been reported that only low 16 bits are set upon syscall
-	 * on ARMv7.
-	 *
-	 * We may rather need implement builtin-memset and clear the
-	 * whole memory needed here.
-	 */
 	args->gids[0] = args->gids[1] = args->gids[2] = args->gids[3] = 0;
 
-if (0) {
-	ret = sys_getresgid(&args->gids[0], &args->gids[1], &args->gids[2]);
-	if (ret) {
-		pr_err("Unable to get uids: %d\n", ret);
-		return -1;
-	}
-}
-
-	//args->gids[3] = sys_setfsgid(-1L);
 
 	return 0;
 
