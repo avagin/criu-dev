@@ -292,7 +292,7 @@ static int dump_creds(struct parasite_dump_creds *args)
 		return -1;
 	}
 
-	args->uids[3] = sys_setfsuid(-1L);
+	//args->uids[3] = sys_setfsuid(-1L);
 
 	/*
 	 * FIXME In https://github.com/checkpoint-restore/criu/issues/95 it is
@@ -310,7 +310,7 @@ static int dump_creds(struct parasite_dump_creds *args)
 		return -1;
 	}
 
-	args->gids[3] = sys_setfsgid(-1L);
+	//args->gids[3] = sys_setfsgid(-1L);
 
 	return 0;
 
