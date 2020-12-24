@@ -166,7 +166,6 @@ int parasite_dump_thread_seized(struct parasite_thread_ctl *tctl,
 	struct parasite_dump_thread *args;
 	pid_t pid = tid->real;
 	ThreadCoreEntry *tc = core->thread_core;
-	CredsEntry *creds = tc->creds;
 	struct parasite_dump_creds *pc;
 	int ret;
 
@@ -196,11 +195,6 @@ int parasite_dump_thread_seized(struct parasite_thread_ctl *tctl,
 		goto err_rth;
 	}
 
-	ret = alloc_groups_copy_creds(creds, pc);
-	if (ret) {
-		pr_err("Can't copy creds for thread %d\n", pid);
-		goto err_rth;
-	}
 
 	compel_release_thread(tctl);
 
