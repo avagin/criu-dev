@@ -293,6 +293,7 @@ static int dump_creds(struct parasite_dump_creds *args)
 
 	args->uids[3] = sys_setfsuid(-1L);
 
+return 0;
 	/*
 	 * FIXME In https://github.com/checkpoint-restore/criu/issues/95 it is
 	 * been reported that only low 16 bits are set upon syscall
@@ -303,7 +304,6 @@ static int dump_creds(struct parasite_dump_creds *args)
 	 */
 	args->gids[0] = args->gids[1] = args->gids[2] = args->gids[3] = 0;
 
-return 0;
 	ret = sys_getresgid(&args->gids[0], &args->gids[1], &args->gids[2]);
 	if (ret) {
 		pr_err("Unable to get uids: %d\n", ret);
