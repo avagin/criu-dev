@@ -199,6 +199,7 @@ static int dump_thread_common(struct parasite_dump_thread *ti)
 		goto out;
 	}
 
+return 0;
 	ret = dump_creds(ti->creds);
 out:
 	return ret;
