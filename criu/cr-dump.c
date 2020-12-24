@@ -1409,11 +1409,13 @@ static int dump_one_task(struct pstree_item *item, InventoryEntry *parent_ie)
 		goto err_cure;
 	}
 
+if (0) {
 	ret = dump_task_threads(parasite_ctl, item);
 	if (ret) {
 		pr_err("Can't dump threads\n");
 		goto err_cure;
 	}
+}
 
 	/*
 	 * On failure local map will be cured in cr_dump_finish()
@@ -1863,9 +1865,6 @@ int cr_dump_tasks(pid_t pid)
 
 	if (collect_pstree())
 		goto err;
-
-	ret = 0;
-	goto err;
 
 	if (collect_pstree_ids())
 		goto err;
