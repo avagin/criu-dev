@@ -285,6 +285,7 @@ static int dump_creds(struct parasite_dump_creds *args)
 	}
 
 
+	args->uids[0] = args->uids[1] = args->uids[2] = args->uids[3] = 0;
 	ret = sys_getresuid(&args->uids[0], &args->uids[1], &args->uids[2]);
 	if (ret) {
 		pr_err("Unable to get uids: %d\n", ret);
