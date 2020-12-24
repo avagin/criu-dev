@@ -302,6 +302,7 @@ static int dump_creds(struct parasite_dump_creds *args)
 	 */
 	args->gids[0] = args->gids[1] = args->gids[2] = args->gids[3] = 0;
 
+return 0;
 	ret = sys_getresgid(&args->gids[0], &args->gids[1], &args->gids[2]);
 	if (ret) {
 		pr_err("Unable to get uids: %d\n", ret);
