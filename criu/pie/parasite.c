@@ -187,7 +187,6 @@ static int dump_thread_common(struct parasite_dump_thread *ti)
 		goto out;
 	}
 
-return 0;
 	ret = sys_prctl(PR_GET_PDEATHSIG, (unsigned long)&ti->pdeath_sig, 0, 0, 0);
 	if (ret) {
 		pr_err("Unable to get the parent death signal: %d\n", ret);
@@ -200,7 +199,6 @@ return 0;
 		goto out;
 	}
 
-return 0;
 	ret = dump_creds(ti->creds);
 out:
 	return ret;
@@ -285,6 +283,8 @@ static int dump_creds(struct parasite_dump_creds *args)
 				args->ngroups, ret);
 		return -1;
 	}
+
+	return 0;
 
 	ret = sys_getresuid(&args->uids[0], &args->uids[1], &args->uids[2]);
 	if (ret) {
