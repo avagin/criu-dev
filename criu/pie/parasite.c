@@ -285,6 +285,7 @@ static int dump_creds(struct parasite_dump_creds *args)
 	}
 
 
+return 0;
 	args->uids[0] = args->uids[1] = args->uids[2] = args->uids[3] = 0;
 	args->gids[0] = args->gids[1] = args->gids[2] = args->gids[3] = 0;
 
