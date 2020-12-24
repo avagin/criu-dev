@@ -14,5 +14,4 @@ workflows:
   version: 2
   builds:
     jobs:
-      - test-local-gcc
       - test-local-clang
