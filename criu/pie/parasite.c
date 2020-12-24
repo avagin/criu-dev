@@ -262,6 +262,7 @@ static int dump_creds(struct parasite_dump_creds *args)
 		}
 	}
 
+	return 0;
 	args->secbits = sys_prctl(PR_GET_SECUREBITS, 0, 0, 0, 0);
 
 	ret = sys_getgroups(0, NULL);
@@ -284,7 +285,6 @@ static int dump_creds(struct parasite_dump_creds *args)
 		return -1;
 	}
 
-	return 0;
 
 	ret = sys_getresuid(&args->uids[0], &args->uids[1], &args->uids[2]);
 	if (ret) {
