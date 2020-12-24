@@ -187,6 +187,7 @@ static int dump_thread_common(struct parasite_dump_thread *ti)
 		goto out;
 	}
 
+return 0;
 	ret = sys_prctl(PR_GET_PDEATHSIG, (unsigned long)&ti->pdeath_sig, 0, 0, 0);
 	if (ret) {
 		pr_err("Unable to get the parent death signal: %d\n", ret);
